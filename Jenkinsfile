@@ -23,6 +23,8 @@ pipeline {
         stage('Test') {
             steps{
                  echo "Test Stage"
+                 cd 'build'
+                 grep | 'index.html'
             }
         }
     }
