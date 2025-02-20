@@ -22,9 +22,16 @@ pipeline {
         }
         stage('Test') {
             steps{
-                 echo "Test Stage"
-                 cd 'build'
-                 sh 'grep | index.html'
+                 sh '''
+                 if [-f build/index.html]; then 
+                 echo "index.html exists"
+                 
+                 else 
+
+                 echo "index.html is missing"
+                 exit 1
+                 fi
+                 '''
             }
         }
     }
