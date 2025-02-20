@@ -31,6 +31,7 @@ pipeline {
                  echo "index.html is missing"
                  exit 1
                  fi
+                 npm test
                  '''
             }
         }
